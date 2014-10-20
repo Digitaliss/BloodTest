@@ -55,19 +55,19 @@ public class BloodTest
                 System.out.print(bloodSugar[i - 1][j - 1] + "\t");
 
             System.out.println();
-            System.out.print("Your blood sugar average today is" + dayAverage + ".");
+            System.out.printf("Your blood sugar average today is %.1f.", dayAverage);
             System.out.println();
 
             // daily encouragement
             //---- not sure why, but none of these conditions are being met...
-            if (dayAverage < OK_SUGAR && dayAverage > MIN_SUGAR)
+            if ((dayAverage< OK_SUGAR || Math.abs(dayAverage-OK_SUGAR) < 0.0001) && (dayAverage > MIN_SUGAR || Math.abs(dayAverage-MIN_SUGAR) < 0.0001))
                 System.out.println("That's pretty good. Today was a good day. Keep up the good work.");
 
             if (dayAverage > OK_SUGAR && dayAverage < MAX_SUGAR)
                 System.out.println("That's not bad. Try to bring it down a little bit.");
 
             // daily warnings
-            if (dayAverage > MAX_SUGAR)
+            if (dayAverage > MAX_SUGAR || Math.abs(dayAverage-MAX_SUGAR) < 0.0001)
                 System.out.println("That's too high. Be more careful tomorrow.");
 
             if (dayAverage < MIN_SUGAR)
@@ -76,18 +76,19 @@ public class BloodTest
 
         monthAverage= sumAverage/numDays; // calculating monthly average
         System.out.println();
-        System.out.print("Your monthly average is" + monthAverage + ".");
+        System.out.printf("Your monthly average is %.1f.", monthAverage);
+        System.out.println();
 
         // monthly encouragement
         //---- not sure why, but none of these conditions are being met...
-        if (monthAverage < OK_SUGAR && monthAverage > MIN_SUGAR)
+        if ((monthAverage< OK_SUGAR || Math.abs(monthAverage-OK_SUGAR) < 0.0001) && (monthAverage > MIN_SUGAR || Math.abs(monthAverage-MIN_SUGAR) < 0.0001))
             System.out.println("That's pretty good. This is a good month. Keep up the good work.");
 
         if (monthAverage > OK_SUGAR && monthAverage < MAX_SUGAR)
             System.out.println("That's not bad. Try to bring it down a little bit.");
 
         // daily warnings
-        if (monthAverage > MAX_SUGAR)
+        if (monthAverage > MAX_SUGAR || Math.abs(monthAverage-MAX_SUGAR) < 0.0001)
             System.out.println("That's too high. Be more careful next month.");
 
         if (monthAverage < MIN_SUGAR)
