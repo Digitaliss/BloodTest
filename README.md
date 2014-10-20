@@ -9,7 +9,6 @@ The number of tests per day is defined by the user.
 
 The program will take the test results and return the daily average blood sugar level, as well as warnings or encouragements. 
 At the end of the month, the program will also return the month average blood sugar level, as well as warnings or encouragements. 
-So far, and for some reason, the program does not return these warnings or encouragements...
 
 The long term goal would be: 
 1. Increase the number of statistics returned to the user
